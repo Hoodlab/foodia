@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
@@ -126,14 +127,15 @@ private fun OnBoardingDetail(
         Spacer(modifier = Modifier.height(16.dp))
         Text(
             text = stringResource(id = onBoardingItem.textRes),
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Justify
         )
         Spacer(modifier = Modifier.height(16.dp))
         Row(
             Modifier
                 .wrapContentHeight()
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .padding(bottom = 8.dp),
             horizontalArrangement = Arrangement.Center
         ) {
             repeat(pagerState.pageCount) { iterations ->
@@ -142,10 +144,12 @@ private fun OnBoardingDetail(
                 else MaterialTheme.colorScheme.primary.copy(.5f)
                 Box(
                     modifier = Modifier
+                        .padding(2.dp)
                         .clip(CircleShape)
                         .background(color)
                         .size(16.dp)
                 )
+
             }
         }
 

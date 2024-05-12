@@ -36,10 +36,10 @@ fun Modifier.fadeInGradientBorder(
         animateColorAsState(
             targetValue = if (showBorder) colors[i] else colors[i].copy(.5f),
             label = "animated Color"
-        )
+        ).value
     }
 
-    diagonalGradientBorder(colors, borderSize, shape)
+    diagonalGradientBorder(animatedColors, borderSize, shape)
 }
 
 
