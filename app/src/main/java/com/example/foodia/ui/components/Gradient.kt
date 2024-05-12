@@ -6,6 +6,8 @@ import androidx.compose.foundation.border
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.drawWithContent
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -69,6 +71,17 @@ fun Modifier.offsetGradientBackground(
         )
     )
 
+}
+
+fun Modifier.diagonalGradientTint(
+    colors: List<Color>,
+    blendMode: BlendMode
+) = drawWithContent {
+    drawContent()
+    drawRect(
+        brush = Brush.linearGradient(colors),
+        blendMode = blendMode
+    )
 }
 
 
