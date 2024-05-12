@@ -15,8 +15,10 @@ import androidx.navigation.navArgument
 import com.example.foodia.ui.cart.Cart
 import com.example.foodia.ui.detail.FoodDetail
 import com.example.foodia.ui.home.Feed
+import com.example.foodia.ui.onboarding.OnBoardingScreen
 
 const val DetailRoute = "DetailScreen"
+const val OnBoardingRoute = "OnBoarding"
 
 enum class Tabs(
     val title: String,
@@ -52,6 +54,11 @@ fun FoodiaNavigationHost(
                 onFoodItemClick = { id -> },
                 modifier = modifier
             )
+        }
+        composable(route = OnBoardingRoute) { from ->
+            OnBoardingScreen {
+                navController.navigateToBottomBarRoute(Tabs.Feed.route)
+            }
         }
     }
 

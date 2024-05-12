@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="Theme.SplashScreen.Foodia" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.Foodia</item>
+    </style>
+
     <style name="Theme.Foodia" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
